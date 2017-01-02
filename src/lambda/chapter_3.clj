@@ -85,11 +85,13 @@
      ~true-choice ~false-choice))
 
 ;; helper function to check difference
-;; between a number and `zero`
+;; between a number and `zero`.
+;; returns `true` or `false` as it's only
+;; for use with tests
 (defn from-zero [diff n]
   (if (= diff 0)
-    (is-zero? n)
+    (= +true (is-zero? n))
     (let [n' (pred n)]
       (if (= n n') ;; already at `zero`
-        +false
+        false
         (recur (dec diff) n')))))

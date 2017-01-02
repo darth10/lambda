@@ -9,39 +9,39 @@
 
 (deftest test-add-1
   (testing "add-1 function"
-    (is (= +true (->> ((add-1 (num 0)) (num 0)) (from-zero 0))))
-    (is (= +true (->> ((add-1 (num 1)) (num 0)) (from-zero 1))))
-    (is (= +true (->> ((add-1 (num 0)) (num 1)) (from-zero 1))))
-    (is (= +true (->> ((add-1 (num 1)) (num 1)) (from-zero 2))))
-    (is (= +true (->> ((add-1 (num 1)) (num 2)) (from-zero 3))))
-    (is (= +true (->> ((add-1 (num 2)) (num 1)) (from-zero 3))))
-    (is (= +true (->> ((add-1 (num 2)) (num 2)) (from-zero 4))))))
+    (is (->> ((add-1 (num 0)) (num 0)) (from-zero 0)))
+    (is (->> ((add-1 (num 1)) (num 0)) (from-zero 1)))
+    (is (->> ((add-1 (num 0)) (num 1)) (from-zero 1)))
+    (is (->> ((add-1 (num 1)) (num 1)) (from-zero 2)))
+    (is (->> ((add-1 (num 1)) (num 2)) (from-zero 3)))
+    (is (->> ((add-1 (num 2)) (num 1)) (from-zero 3)))
+    (is (->> ((add-1 (num 2)) (num 2)) (from-zero 4)))))
 
 (deftest test-add-2
   (testing "add-2 function"
-    (is (= +true (->> ((add-2 (num 0)) (num 0)) (from-zero 0))))
-    (is (= +true (->> ((add-2 (num 1)) (num 0)) (from-zero 1))))
-    (is (= +true (->> ((add-2 (num 0)) (num 1)) (from-zero 1))))
-    (is (= +true (->> ((add-2 (num 1)) (num 1)) (from-zero 2))))
-    (is (= +true (->> ((add-2 (num 1)) (num 2)) (from-zero 3))))
-    (is (= +true (->> ((add-2 (num 2)) (num 1)) (from-zero 3))))
-    (is (= +true (->> ((add-2 (num 2)) (num 2)) (from-zero 4))))))
+    (is (->> ((add-2 (num 0)) (num 0)) (from-zero 0)))
+    (is (->> ((add-2 (num 1)) (num 0)) (from-zero 1)))
+    (is (->> ((add-2 (num 0)) (num 1)) (from-zero 1)))
+    (is (->> ((add-2 (num 1)) (num 1)) (from-zero 2)))
+    (is (->> ((add-2 (num 1)) (num 2)) (from-zero 3)))
+    (is (->> ((add-2 (num 2)) (num 1)) (from-zero 3)))
+    (is (->> ((add-2 (num 2)) (num 2)) (from-zero 4)))))
 
 (deftest test-mult-1
   (testing "mult-1 function"
-    (is (= +true (->> ((mult-1 (num 0)) (num 0)) (from-zero 0))))
-    (is (= +true (->> ((mult-1 (num 0)) (num 1)) (from-zero 0))))
-    (is (= +true (->> ((mult-1 (num 1)) (num 0)) (from-zero 0))))
-    (is (= +true (->> ((mult-1 (num 1)) (num 1)) (from-zero 1))))
-    (is (= +true (->> ((mult-1 (num 1)) (num 2)) (from-zero 2))))
-    (is (= +true (->> ((mult-1 (num 2)) (num 1)) (from-zero 2))))
-    (is (= +true (->> ((mult-1 (num 2)) (num 2)) (from-zero 4))))
-    (is (= +true (->> ((mult-1 (num 2)) (num 3)) (from-zero 6))))
-    (is (= +true (->> ((mult-1 (num 3)) (num 2)) (from-zero 6))))
-    (is (= +true (->> ((mult-1 (num 3)) (num 3)) (from-zero 9))))
-    (is (= +true (->> ((mult-1 (num 2)) (num 25)) (from-zero 50))))
-    (is (= +true (->> ((mult-1 (num 3)) (num 25)) (from-zero 75))))
-    (is (= +true (->> ((mult-1 (num 4)) (num 25)) (from-zero 100))))))
+    (is (->> ((mult-1 (num 0)) (num 0)) (from-zero 0)))
+    (is (->> ((mult-1 (num 0)) (num 1)) (from-zero 0)))
+    (is (->> ((mult-1 (num 1)) (num 0)) (from-zero 0)))
+    (is (->> ((mult-1 (num 1)) (num 1)) (from-zero 1)))
+    (is (->> ((mult-1 (num 1)) (num 2)) (from-zero 2)))
+    (is (->> ((mult-1 (num 2)) (num 1)) (from-zero 2)))
+    (is (->> ((mult-1 (num 2)) (num 2)) (from-zero 4)))
+    (is (->> ((mult-1 (num 2)) (num 3)) (from-zero 6)))
+    (is (->> ((mult-1 (num 3)) (num 2)) (from-zero 6)))
+    (is (->> ((mult-1 (num 3)) (num 3)) (from-zero 9)))
+    (is (->> ((mult-1 (num 2)) (num 25)) (from-zero 50)))
+    (is (->> ((mult-1 (num 3)) (num 25)) (from-zero 75)))
+    (is (->> ((mult-1 (num 4)) (num 25)) (from-zero 100)))))
 
 (deftest test-recursive
   (testing "recursive function"
@@ -51,19 +51,19 @@
 
 (deftest test-mult-2
   (testing "mult-2 function"
-    (is (= +true (->> ((mult-2 (num 0)) (num 0)) (from-zero 0))))
-    (is (= +true (->> ((mult-2 (num 0)) (num 1)) (from-zero 0))))
-    (is (= +true (->> ((mult-2 (num 1)) (num 0)) (from-zero 0))))
-    (is (= +true (->> ((mult-2 (num 1)) (num 1)) (from-zero 1))))
-    (is (= +true (->> ((mult-2 (num 1)) (num 2)) (from-zero 2))))
-    (is (= +true (->> ((mult-2 (num 2)) (num 1)) (from-zero 2))))
-    (is (= +true (->> ((mult-2 (num 2)) (num 2)) (from-zero 4))))
-    (is (= +true (->> ((mult-2 (num 2)) (num 3)) (from-zero 6))))
-    (is (= +true (->> ((mult-2 (num 3)) (num 2)) (from-zero 6))))
-    (is (= +true (->> ((mult-2 (num 3)) (num 3)) (from-zero 9))))
-    (is (= +true (->> ((mult-2 (num 2)) (num 25)) (from-zero 50))))
-    (is (= +true (->> ((mult-2 (num 3)) (num 25)) (from-zero 75))))
-    (is (= +true (->> ((mult-2 (num 4)) (num 25)) (from-zero 100))))))
+    (is (->> ((mult-2 (num 0)) (num 0)) (from-zero 0)))
+    (is (->> ((mult-2 (num 0)) (num 1)) (from-zero 0)))
+    (is (->> ((mult-2 (num 1)) (num 0)) (from-zero 0)))
+    (is (->> ((mult-2 (num 1)) (num 1)) (from-zero 1)))
+    (is (->> ((mult-2 (num 1)) (num 2)) (from-zero 2)))
+    (is (->> ((mult-2 (num 2)) (num 1)) (from-zero 2)))
+    (is (->> ((mult-2 (num 2)) (num 2)) (from-zero 4)))
+    (is (->> ((mult-2 (num 2)) (num 3)) (from-zero 6)))
+    (is (->> ((mult-2 (num 3)) (num 2)) (from-zero 6)))
+    (is (->> ((mult-2 (num 3)) (num 3)) (from-zero 9)))
+    (is (->> ((mult-2 (num 2)) (num 25)) (from-zero 50)))
+    (is (->> ((mult-2 (num 3)) (num 25)) (from-zero 75)))
+    (is (->> ((mult-2 (num 4)) (num 25)) (from-zero 100)))))
 
 (deftest test-recursive-2
   (testing "recursive-2 function"
@@ -73,36 +73,36 @@
 
 (deftest test-mult-3
   (testing "mult-3 function"
-    (is (= +true (->> ((mult-3 (num 0)) (num 0)) (from-zero 0))))
-    (is (= +true (->> ((mult-3 (num 0)) (num 1)) (from-zero 0))))
-    (is (= +true (->> ((mult-3 (num 1)) (num 0)) (from-zero 0))))
-    (is (= +true (->> ((mult-3 (num 1)) (num 1)) (from-zero 1))))
-    (is (= +true (->> ((mult-3 (num 1)) (num 2)) (from-zero 2))))
-    (is (= +true (->> ((mult-3 (num 2)) (num 1)) (from-zero 2))))
-    (is (= +true (->> ((mult-3 (num 2)) (num 2)) (from-zero 4))))
-    (is (= +true (->> ((mult-3 (num 2)) (num 3)) (from-zero 6))))
-    (is (= +true (->> ((mult-3 (num 3)) (num 2)) (from-zero 6))))
-    (is (= +true (->> ((mult-3 (num 3)) (num 3)) (from-zero 9))))
-    (is (= +true (->> ((mult-3 (num 2)) (num 25)) (from-zero 50))))
-    (is (= +true (->> ((mult-3 (num 3)) (num 25)) (from-zero 75))))
-    (is (= +true (->> ((mult-3 (num 4)) (num 25)) (from-zero 100))))))
+    (is (->> ((mult-3 (num 0)) (num 0)) (from-zero 0)))
+    (is (->> ((mult-3 (num 0)) (num 1)) (from-zero 0)))
+    (is (->> ((mult-3 (num 1)) (num 0)) (from-zero 0)))
+    (is (->> ((mult-3 (num 1)) (num 1)) (from-zero 1)))
+    (is (->> ((mult-3 (num 1)) (num 2)) (from-zero 2)))
+    (is (->> ((mult-3 (num 2)) (num 1)) (from-zero 2)))
+    (is (->> ((mult-3 (num 2)) (num 2)) (from-zero 4)))
+    (is (->> ((mult-3 (num 2)) (num 3)) (from-zero 6)))
+    (is (->> ((mult-3 (num 3)) (num 2)) (from-zero 6)))
+    (is (->> ((mult-3 (num 3)) (num 3)) (from-zero 9)))
+    (is (->> ((mult-3 (num 2)) (num 25)) (from-zero 50)))
+    (is (->> ((mult-3 (num 3)) (num 25)) (from-zero 75)))
+    (is (->> ((mult-3 (num 4)) (num 25)) (from-zero 100)))))
 
 (deftest test-power
   (testing "power function"
-    (is (= +true (->> ((power (num 1)) (num 0)) (from-zero 1))))
-    (is (= +true (->> ((power (num 1)) (num 1)) (from-zero 1))))
-    (is (= +true (->> ((power (num 2)) (num 1)) (from-zero 2))))
-    (is (= +true (->> ((power (num 2)) (num 2)) (from-zero 4))))
-    (is (= +true (->> ((power (num 2)) (num 3)) (from-zero 8))))))
+    (is (->> ((power (num 1)) (num 0)) (from-zero 1)))
+    (is (->> ((power (num 1)) (num 1)) (from-zero 1)))
+    (is (->> ((power (num 2)) (num 1)) (from-zero 2)))
+    (is (->> ((power (num 2)) (num 2)) (from-zero 4)))
+    (is (->> ((power (num 2)) (num 3)) (from-zero 8)))))
 
 (deftest test-sub
   (testing "sub function"
-    (is (= +true (->> ((sub (num 0)) (num 0)) (from-zero 0))))
-    (is (= +true (->> ((sub (num 1)) (num 0)) (from-zero 1))))
-    (is (= +true (->> ((sub (num 1)) (num 1)) (from-zero 0))))
-    (is (= +true (->> ((sub (num 2)) (num 1)) (from-zero 1))))
-    (is (= +true (->> ((sub (num 3)) (num 2)) (from-zero 1))))
-    (is (= +true (->> ((sub (num 5)) (num 3)) (from-zero 2))))))
+    (is (->> ((sub (num 0)) (num 0)) (from-zero 0)))
+    (is (->> ((sub (num 1)) (num 0)) (from-zero 1)))
+    (is (->> ((sub (num 1)) (num 1)) (from-zero 0)))
+    (is (->> ((sub (num 2)) (num 1)) (from-zero 1)))
+    (is (->> ((sub (num 3)) (num 2)) (from-zero 1)))
+    (is (->> ((sub (num 5)) (num 3)) (from-zero 2)))))
 
 (deftest test-equal-1
   (testing "equal-1 function"
@@ -146,9 +146,9 @@
 
 (deftest test-div
   (testing "div function"
-    (is (= +true (->> ((div (num 3)) (num 0)) (from-zero 0))))
-    (is (= +true (->> ((div (num 3)) (num 1)) (from-zero 3))))
-    (is (= +true (->> ((div (num 3)) (num 3)) (from-zero 1))))
-    (is (= +true (->> ((div (num 6)) (num 3)) (from-zero 2))))
-    (is (= +true (->> ((div (num 9)) (num 3)) (from-zero 3))))
-    (is (= +true (->> ((div (num 16)) (num 4)) (from-zero 4))))))
+    (is (->> ((div (num 3)) (num 0)) (from-zero 0)))
+    (is (->> ((div (num 3)) (num 1)) (from-zero 3)))
+    (is (->> ((div (num 3)) (num 3)) (from-zero 1)))
+    (is (->> ((div (num 6)) (num 3)) (from-zero 2)))
+    (is (->> ((div (num 9)) (num 3)) (from-zero 3)))
+    (is (->> ((div (num 16)) (num 4)) (from-zero 4)))))

@@ -48,38 +48,25 @@
 
 (deftest test-from-zero
   (testing "from-zero helper function"
-    (is (= +true (->> zero
-                      (from-zero 0))))
-    (is (= +false (->> zero
-                       (from-zero 1))))
-    (is (= +false (->> (succ zero)
-                       (from-zero 0))))
-    (is (= +true (->> (succ zero)
-                      (from-zero 1))))
-    (is (= +false (->> (succ (succ zero))
-                       (from-zero 0))))
-    (is (= +false (->> (succ (succ zero))
-                       (from-zero 1))))
-    (is (= +true (->> (succ (succ zero))
-                      (from-zero 2))))))
+    (is (from-zero 0 zero))
+    (is (not (from-zero 1 zero)))
+    (is (not (from-zero 0 (succ zero))))
+    (is (from-zero 1 (succ zero)))
+    (is (not (from-zero 0 (succ (succ zero)))))
+    (is (not (from-zero 1 (succ (succ zero)) )))
+    (is (from-zero 2 (succ (succ zero))))))
 
 (deftest test-succ
   (testing "successor function"
-    (is (= +true (->> (succ zero)
-                      (from-zero 1))))
-    (is (= +true (->> (succ (succ zero))
-                      (from-zero 2))))
-    (is (= +true (->> (succ (succ (succ zero)))
-                      (from-zero 3))))))
+    (is (from-zero 1 (succ zero)))
+    (is (from-zero 2 (succ (succ zero))))
+    (is (from-zero 3 (succ (succ (succ zero)))))))
 
 (deftest test-pred
   (testing "predecessor function"
-    (is (= +true (->> (pred three)
-                      (from-zero 2))))
-    (is (= +true (->> (pred (pred three))
-                      (from-zero 1))))
-    (is (= +true (->> (pred (pred (pred three)))
-                      (from-zero 0))))))
+    (is (from-zero 2 (pred three)))
+    (is (from-zero 1 (pred (pred three))))
+    (is (from-zero 0 (pred (pred (pred three)))))))
 
 (deftest test-+if
   (testing "+if macro"

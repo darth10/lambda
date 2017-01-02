@@ -78,8 +78,14 @@
 (def three (succ (succ (succ zero))))
 ;; ...
 
+;; macro for simplifying definition of
+;; conditional exprs
+(defmacro +if [condition true-choice false-choice]
+  `(if (= +true ~condition)
+     ~true-choice ~false-choice))
+
 ;; helper function to check difference
-;; between a number and zero
+;; between a number and `zero`
 (defn from-zero [diff n]
   (if (= diff 0)
     (is-zero? n)

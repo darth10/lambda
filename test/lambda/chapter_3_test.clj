@@ -80,3 +80,8 @@
                       (from-zero 1))))
     (is (= +true (->> (pred (pred (pred three)))
                       (from-zero 0))))))
+
+(deftest test-+if
+  (testing "+if macro"
+    (is (= 'x (+if +true 'x 'y)))
+    (is (= 'y (+if +false 'x 'y)))))

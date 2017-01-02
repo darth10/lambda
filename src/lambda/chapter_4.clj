@@ -1,6 +1,6 @@
 (ns lambda.chapter-4
   (:require [lambda.chapter-3 :refer
-             [+true +false +not +and +or
+             [+true +false +not +and +or +if
               zero one is-zero? succ pred]]))
 
 ;;; Chapter 4
@@ -9,7 +9,7 @@
 ;; using primitive recursion
 (def add-1
   (fn [x]
-    (fn [y] (if (= +true (is-zero? y))
+    (fn [y] (+if (is-zero? y)
              x
              ((add-1 (succ x)) (pred y))))))
 
@@ -18,7 +18,7 @@
 (def add-2'
   (fn [f]
     (fn [x]
-      (fn [y] (if (= +true (is-zero? y))
+      (fn [y] (+if (is-zero? y)
                x
                (((f f) (succ x)) (pred y)))))))
 
@@ -28,7 +28,7 @@
 ;; using primitive recursion
 (def mult-1
   (fn [x]
-    (fn [y] (if (= +true (is-zero? y))
+    (fn [y] (+if (is-zero? y)
              zero
              ((add-1 x) ((mult-1 x) (pred y)))))))
 
@@ -42,7 +42,7 @@
 (def mult-2'
   (fn [f]
     (fn [x]
-      (fn [y] (if (= +true (is-zero? y))
+      (fn [y] (+if (is-zero? y)
                zero
                ((add-1 x) (((recursive f) x) (pred y))))))))
 
@@ -58,7 +58,7 @@
 (def mult-3'
   (fn [f]
     (fn [x]
-      (fn [y] (if (= +true (is-zero? y))
+      (fn [y] (+if (is-zero? y)
                zero
                ((add-1 x) (((f) x) (pred y))))))))
 
@@ -67,7 +67,7 @@
 ;; function to find power of a number
 (def power
   (fn [x]
-    (fn [y] (if (= +true (is-zero? y))
+    (fn [y] (+if (is-zero? y)
              one
              ((mult-1 x) ((power x) (pred y)))))))
 
@@ -75,7 +75,7 @@
 ;; two numbers
 (def sub
   (fn [x]
-    (fn [y] (if (= +true (is-zero? y))
+    (fn [y] (+if (is-zero? y)
              x
              ((sub (pred x)) (pred y))))))
 
@@ -92,11 +92,11 @@
 ;; using recursion
 (def equal-2
   (fn [x]
-    (fn [y] (if (= +true ((+and (is-zero? x))
-                         (is-zero? y)))
+    (fn [y] (+if ((+and (is-zero? x))
+                 (is-zero? y))
              +true
-             (if (= +true ((+or (is-zero? x))
-                           (is-zero? y)))
+             (+if ((+or (is-zero? x))
+                   (is-zero? y))
                +false
                ((equal-2 (pred x)) (pred y)))))))
 
@@ -116,7 +116,7 @@
 
 (def div'
   (fn [x]
-    (fn [y] (if (= +true ((greater y) x))
+    (fn [y] (+if ((greater y) x)
              zero
              (succ ((div' ((sub x) y)) y))))))
 
@@ -125,6 +125,6 @@
 ;; zero is defined as zero
 (def div
   (fn [x]
-    (fn [y] (if (= +true (is-zero? y))
+    (fn [y] (+if (is-zero? y)
              zero
              ((div' x) y)))))

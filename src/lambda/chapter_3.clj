@@ -5,7 +5,7 @@
 ;;; Chapter 3
 
 
-;;; Boolean operators
+;;; Booleans
 
 ;; Note that functions for Boolean operators are
 ;; prepended with '+' to avoid naming conflicts with

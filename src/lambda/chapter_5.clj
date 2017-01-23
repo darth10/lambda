@@ -49,11 +49,11 @@
 
 (def t-not
   (fn [X] (+if (is-bool? X)
-              (t-make-bool (+not (+value X)))
-              t-bool-error)))
+           (t-make-bool (+not (+value X)))
+           t-bool-error)))
 
 (def t-and
   (fn [X]
     (fn [Y] (+if ((+and (is-bool? X)) (is-bool? Y))
-                (t-make-bool ((+and (+value X)) (+value Y)))
-                t-bool-error))))
+             (t-make-bool ((+and (+value X)) (+value Y)))
+             t-bool-error))))
